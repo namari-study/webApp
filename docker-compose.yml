@@ -1,0 +1,14 @@
+# docker-compose.ymlファイルのフォーマットのバージョンを指定
+version: '3'
+# services下にコンテナで作られるサービスを定義
+services:
+  app:
+    # ビルドするDockerfileファイル先を指定
+    build: .
+    # コンテナが起動し続ける
+    tty: true
+    # コンテナ名を指定(任意の名前)
+    container_name: test_webApp
+    # 公開するportを指定 (左 ホストマシンのポート, 右 コンテナのポート)
+    ports:
+    - "8080:8080"
